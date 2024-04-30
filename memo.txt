@@ -1,2 +1,15 @@
 ・pandoc 手動
 pandoc docs/Memo.md -o docs/Memo.html -d pandoc-make.yaml
+
+.gitignore 中身
+
+.gitignore
+.vscode
+
+docs/*.md
+docs/sandbox.*
+tmp/
+
+00-Memo.md
+pandoc-make.yaml
+template.html
