@@ -22,7 +22,7 @@ var:
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-<iframe height="600px" style="width: 100%;" scrolling="no" title="Game" src="https://codepen.io/YasaiRa-men/embed/YzMmoKX?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%; aspect-ratio: 3/5" scrolling="no" title="Game" src="https://codepen.io/YasaiRa-men/embed/YzMmoKX?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/YasaiRa-men/pen/YzMmoKX">
   Game</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
   on <a href="https://codepen.io">CodePen</a>.
