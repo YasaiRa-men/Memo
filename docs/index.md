@@ -6,205 +6,178 @@ var:
 
 # 教育カリキュラム
 
-## まずはステージを作成しよう
+## 始めに
 
-### 枠の作成
+- 今回は、JavaScriptの基礎について学ぶ。
+- HTMLに、動的な動作を加えるには、JavaScriptを使うと便利である。
+- ひとまず、JavaScriptが動作するかの確認をしてみよう。
 
-- まずは、HTMLとCSSを使って簡単なステージを作ってみよう。
+- これまで作成してきたファイルを同じ手順で、HTMLがあるフォルダーと同じ階層に**main.js**という名前のファイルを作成しよう。
+拡張子が**.js**となるものがJavaScriptとして認識されます。
 
-```html{.numberLines caption="example01.html"}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
-</head>
-<body>
-    <main>
-        <div id="mainWindow">
+- 試しに、作ったJavaScriptファイルに、このように書いてみよう。
 
-            <div id="targetField"></div>
-
-            <div id="gameTitle">
-                <div>避けゲー</div>
-                <button id="startButton">スタート</button>
-            </div>
-
-        </div>
-    </main>
-</body>
-</html>
+```javascript{.numberLines caption="main.js"}
+alert(10);
 ```
 
-```css{.numberLines caption="example01.css"}
-html,body{
-  overflow: hidden;
-  height: 100%;
-}
-       
-body {
-  margin: 0px;
-}
+- ただし、これだけでは、HTMLにこのJavaScriptファイルを読み込んでくれない。
+なので、HTMLの**body**内にこのように書いて読み込ませる必要がある。
 
-main {
-  transform: translateX(50%);
-  width: 100%;
-  height: 100%;
-}
+```html{caption="index.html"}
+<script src="main.js"></script>
+```
 
-/**ステージの枠*/
-#mainWindow {
-  background-color: gray;
-  height: 100%;
-  aspect-ratio: 3 / 5;
-  transform: translateX(-50%);
-}
+- この**script**タグで、JavaScriptを読み込んでくれるようになり、**src**属性で、どのJavaScriptファイルを読み込むかを記述する。
 
-/**ゲームタイトルの枠*/
-#gameTitle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+## 変数
 
-/**主人公の移動できる範囲*/
-#targetField {
-  background-color: rgb(113, 113, 113);
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  bottom: 100px;
-  z-index: -1;
+### 役割
+
+- 変数は、値を代入しておき、それを変更したときに動的に変わるようになります。
+- プログラム内でデータを一時的に保持し、操作するために使用されます。これにより、プログラムはより動的で柔軟なデータ処理を実現できます。
+- また、変数を使用することで、コードの再利用性が向上し、プログラムの可読性とメンテナンスが容易になります。
+
+### コード例
+
+```javascript{.numberLines caption="example01.js"}
+let x = 10;
+
+x = x + 5;
+
+console.log(x);
+```
+
+このコードでは、`x`という変数に`10`を代入し、その後`x`に`5`を加えています。最終的に`x`の値は`15`となり、これが出力されます。
+
+## 条件分岐
+
+### 役割
+
+- 条件分岐は、プログラム内で特定の条件を満たすかどうかに基づいて、異なるコードの実行パスを選択するために使用されます。
+- これにより、プログラムはより柔軟に動作し、様々なシナリオに対応できるようになります。
+- 例として、変数の値に基づいて異なるメッセージを表示することが挙げられます。
+
+### コード例
+
+```javascript{.numberLines caption="example02.js"}
+let age = 20;
+
+if (age >= 18) {
+
+  console.log("成人です");
+
+} else {
+
+  console.log("未成年です");
+
 }
 ```
 
-- この2つを実行すると、以下のようになります。
+このコードでは、`age`が`18`以上の場合は"成人です"を、そうでない場合は"未成年です"を出力します。
 
-<iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/oNOKKry?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/oNOKKry">
-  Untitled</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+## 繰り返し処理
 
-- スタートボタンがありますが、まだ何も起きません。
+### 役割
 
-### 主人公の作成
+- 繰り返し処理は、同じコードブロックを複数回実行するために使用されます。
+- これにより、コードの冗長性を減らし、大量のデータ処理や反復的なタスクを効率的に処理することができます。
+- 例として、変数の値を増加させながら一定の条件を満たすまでループを続けることが挙げられます。
 
-- 次に、ボタンが押されたら主人公が出現するようにしよう。
-- 主人公は、のちにJavaScriptで操作できるように、"target"というid属性をつけます。
+### コード例
 
-```html{.numberLines caption="example02.html"}
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
-</head>
-<body>
-    <main>
-        <div id="mainWindow">
+```javascript{.numberLines caption="example03.js"}
+for (let i = 0; i < 5; i++) {
 
-            <div id="targetField"></div>
-            <!-- ここに主人公にするdivを配置 -->
-            <div id="target"></div>
+  console.log(i);
 
-            <div id="gameTitle">
-                <div>避けゲー</div>
-                <button id="startButton">スタート</button>
-            </div>
-
-        </div>
-    </main>
-</body>
-</html>
-```
-
-- また、主人公には分かりやすいように色を茶色の丸にしておきます。
-
-```css{.numberLines caption="example01.css"}
-html,body{
-  overflow: hidden;
-  height: 100%;
-}
-       
-body {
-  margin: 0px;
-}
-
-main {
-  transform: translateX(50%);
-  width: 100%;
-  height: 100%;
-}
-
-/**ステージの枠*/
-#mainWindow {
-  background-color: gray;
-  height: 100%;
-  aspect-ratio: 3 / 5;
-  transform: translateX(-50%);
-}
-
-/**ゲームタイトルの枠*/
-#gameTitle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/**主人公の移動できる範囲*/
-#targetField {
-  background-color: rgb(113, 113, 113);
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  bottom: 100px;
-  z-index: -1;
-}
-
-/**主人公*/
-#target {
-  background-color: brown;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin: 0px;
-  position: absolute;
 }
 ```
 
-- これによって、このようになりました。
+このコードでは、`0`から`4`までの数字が順番に出力されます。`for`ループによってそれぞれの値が`i`に代入され、出力されます。
 
-<iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/pomzzoE?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/pomzzoE">
-  Untitled</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+## 例外処理
 
-- 分かりやすく主人公が出てきましたが、左上にいます。
-- これらも自分で設定していかなければなりません。
+### 役割
 
+- 例外処理は、プログラム実行中に発生する予期せぬエラーや例外に対処するために使用されます。
+- これにより、プログラムの安定性と信頼性が向上し、エラーが発生しても適切に対応し、プログラムのクラッシュを防ぐことができます。
+- 例として、ファイル読み込み時にファイルが存在しない場合にエラーメッセージを表示することが挙げられます。
 
-<iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Example_01" src="https://codepen.io/YasaiRa-men/embed/XWQvLRQ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/XWQvLRQ">
-  Example_01</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+### コード例
 
-## 主人公を動かしてみよう
+```javascript{.numberLines caption="example04.js"}
+try {
 
-<iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Example_02" src="https://codepen.io/YasaiRa-men/embed/QWPeXMx?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/QWPeXMx">
-  Example_02</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+  console.log(10 / 0);
 
-<iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Game" src="https://codepen.io/YasaiRa-men/embed/YzMmoKX?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/YzMmoKX">
-  Game</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+} catch (error) {
+
+  console.log("0で割ることはできません");
+
+}
+```
+
+このコードでは、`10 / 0`の計算を試みていますが、0で割ることはできないためエラーが発生します。`catch`ブロックによってこのエラーが捕捉され、"0で割ることはできません"が出力されます。
+
+## 関数
+
+### 役割
+
+- 関数は、特定のタスクを実行するためのコードの集まりです。
+- これにより、コードの再利用性が向上し、プログラム全体の構造が整理され、メンテナンスが容易になります。
+- 例として、ユーザー入力を受け取り、それに基づいて異なる処理を行う関数が挙げられます。
+
+### コード例
+
+```javascript{.numberLines caption="example05.js"}
+function greet(name) {
+
+  console.log("こんにちは、" + name + "さん！");
+
+}
+
+greet("太郎");
+```
+
+このコードでは、`greet`関数が定義されており、`name`という引数を取ります。この関数は、与えられた名前を使用して挨拶のメッセージを出力します。`greet("太郎")`の呼び出しにより、"こんにちは、太郎さん！"が出力されます。
+
+## イベントリスナー
+
+### 役割
+
+- イベントリスナーは、ユーザーのアクション（クリック、キーボード入力など）に応じて特定のコードを実行するために使用されます。
+- これにより、インタラクティブなウェブページやアプリケーションを作成することが可能になります。
+- 例として、ボタンがクリックされたときに情報を表示することが挙げられます。
+
+### コード例
+
+```javascript{.numberLines caption="example06.js"}
+document.getElementById("myButton").addEventListener("click", function() {
+
+  console.log("ボタンがクリックされました！");
+
+});
+```
+
+このコードでは、IDが`myButton`のボタンにクリックイベントリスナーを追加しています。ボタンがクリックされると、コンソールに`"ボタンがクリックされました！"`と表示されます。
+
+## 無名関数
+
+### 役割
+
+- 無名関数（匿名関数）は、名前を持たない関数で、一時的な処理やイベントハンドラーとして使用されることが多いです。
+- これにより、コードの簡潔化が図られ、一度限りの使用や即時実行が可能になります。
+- 例として、イベントリスナー内で直接処理を記述することが挙げられます。
+
+### コード例
+
+```javascript{.numberLines caption="example07.js"}
+document.getElementById("infoButton").addEventListener("click", function() {
+
+  alert("情報を表示します！");
+
+});
+```
+
+このコードでは、IDが`infoButton`のボタンにクリックイベントリスナーを追加し、無名関数を使用しています。ボタンがクリックされると、アラートで"情報を表示します！"というメッセージが表示されます。この例では、イベントリスナーに直接無名関数を記述することで、コードの簡潔さを保ちつつ、必要な機能を実装しています。

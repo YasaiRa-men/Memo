@@ -42,18 +42,64 @@
       <div id="g-nav-list">
         <!-- ---------------------------------------- -->
          <ul>
-<li><a href="#まずはステージを作成しよう"
-id="toc-まずはステージを作成しよう"><span
-class="toc-section-number">1</span> まずはステージを作成しよう</a>
+<li><a href="#始めに" id="toc-始めに"><span
+class="toc-section-number">1</span> 始めに</a></li>
+<li><a href="#変数" id="toc-変数"><span
+class="toc-section-number">2</span> 変数</a>
 <ul>
-<li><a href="#枠の作成" id="toc-枠の作成"><span
-class="toc-section-number">1.1</span> 枠の作成</a></li>
-<li><a href="#主人公の作成" id="toc-主人公の作成"><span
-class="toc-section-number">1.2</span> 主人公の作成</a></li>
+<li><a href="#役割" id="toc-役割"><span
+class="toc-section-number">2.1</span> 役割</a></li>
+<li><a href="#コード例" id="toc-コード例"><span
+class="toc-section-number">2.2</span> コード例</a></li>
 </ul></li>
-<li><a href="#主人公を動かしてみよう"
-id="toc-主人公を動かしてみよう"><span
-class="toc-section-number">2</span> 主人公を動かしてみよう</a></li>
+<li><a href="#条件分岐" id="toc-条件分岐"><span
+class="toc-section-number">3</span> 条件分岐</a>
+<ul>
+<li><a href="#役割-1" id="toc-役割-1"><span
+class="toc-section-number">3.1</span> 役割</a></li>
+<li><a href="#コード例-1" id="toc-コード例-1"><span
+class="toc-section-number">3.2</span> コード例</a></li>
+</ul></li>
+<li><a href="#繰り返し処理" id="toc-繰り返し処理"><span
+class="toc-section-number">4</span> 繰り返し処理</a>
+<ul>
+<li><a href="#役割-2" id="toc-役割-2"><span
+class="toc-section-number">4.1</span> 役割</a></li>
+<li><a href="#コード例-2" id="toc-コード例-2"><span
+class="toc-section-number">4.2</span> コード例</a></li>
+</ul></li>
+<li><a href="#例外処理" id="toc-例外処理"><span
+class="toc-section-number">5</span> 例外処理</a>
+<ul>
+<li><a href="#役割-3" id="toc-役割-3"><span
+class="toc-section-number">5.1</span> 役割</a></li>
+<li><a href="#コード例-3" id="toc-コード例-3"><span
+class="toc-section-number">5.2</span> コード例</a></li>
+</ul></li>
+<li><a href="#関数" id="toc-関数"><span
+class="toc-section-number">6</span> 関数</a>
+<ul>
+<li><a href="#役割-4" id="toc-役割-4"><span
+class="toc-section-number">6.1</span> 役割</a></li>
+<li><a href="#コード例-4" id="toc-コード例-4"><span
+class="toc-section-number">6.2</span> コード例</a></li>
+</ul></li>
+<li><a href="#イベントリスナー" id="toc-イベントリスナー"><span
+class="toc-section-number">7</span> イベントリスナー</a>
+<ul>
+<li><a href="#役割-5" id="toc-役割-5"><span
+class="toc-section-number">7.1</span> 役割</a></li>
+<li><a href="#コード例-5" id="toc-コード例-5"><span
+class="toc-section-number">7.2</span> コード例</a></li>
+</ul></li>
+<li><a href="#無名関数" id="toc-無名関数"><span
+class="toc-section-number">8</span> 無名関数</a>
+<ul>
+<li><a href="#役割-6" id="toc-役割-6"><span
+class="toc-section-number">8.1</span> 役割</a></li>
+<li><a href="#コード例-6" id="toc-コード例-6"><span
+class="toc-section-number">8.2</span> コード例</a></li>
+</ul></li>
 </ul> 
         <!-- ---------------------------------------- -->
       </div>
@@ -66,220 +112,170 @@ class="toc-section-number">2</span> 主人公を動かしてみよう</a></li>
 
     <main class="markdown-body">
       <!-- ---------------------------------------- -->
-      <h1 data-number="1" id="まずはステージを作成しよう"><span
-      class="header-section-number">1</span>
-      まずはステージを作成しよう</h1>
-      <h2 data-number="1.1" id="枠の作成"><span
-      class="header-section-number">1.1</span> 枠の作成</h2>
+      <h1 data-number="1" id="始めに"><span
+      class="header-section-number">1</span> 始めに</h1>
       <ul>
-      <li>まずは、HTMLとCSSを使って簡単なステージを作ってみよう。</li>
+      <li><p>今回は、JavaScriptの基礎について学ぶ。</p></li>
+      <li><p>HTMLに、動的な動作を加えるには、JavaScriptを使うと便利である。</p></li>
+      <li><p>ひとまず、JavaScriptが動作するかの確認をしてみよう。</p></li>
+      <li><p>これまで作成してきたファイルを同じ手順で、HTMLがあるフォルダーと同じ階層に<strong>main.js</strong>という名前のファイルを作成しよう。
+      拡張子が<strong>.js</strong>となるものがJavaScriptとして認識されます。</p></li>
+      <li><p>試しに、作ったJavaScriptファイルに、このように書いてみよう。</p></li>
       </ul>
-      <div class="sourceCode" id="cb1"
-      data-caption="example01.html"><pre
-      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;ja&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Game<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="dt">&lt;</span><span class="kw">main</span><span class="dt">&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;mainWindow&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;targetField&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;gameTitle&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>避けゲー<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a>                <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;startButton&quot;</span><span class="dt">&gt;</span>スタート<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a>    <span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
-      <div class="sourceCode" id="cb2" data-caption="example01.css"><pre
-      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1"></a>html<span class="op">,</span>body{</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>}</span>
-<span id="cb2-5"><a href="#cb2-5"></a>       </span>
-<span id="cb2-6"><a href="#cb2-6"></a>body {</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>}</span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a>main {</span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translateX(</span><span class="dv">50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a>}</span>
-<span id="cb2-15"><a href="#cb2-15"></a></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="co">/**ステージの枠*/</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="pp">#mainWindow</span> {</span>
-<span id="cb2-18"><a href="#cb2-18"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">gray</span><span class="op">;</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a>  <span class="kw">aspect-ratio</span><span class="ch">:</span> <span class="dv">3</span> / <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translateX(</span><span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>}</span>
-<span id="cb2-23"><a href="#cb2-23"></a></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="co">/**ゲームタイトルの枠*/</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="pp">#gameTitle</span> {</span>
-<span id="cb2-26"><a href="#cb2-26"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-29"><a href="#cb2-29"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translate(</span><span class="dv">-50</span><span class="dt">%</span><span class="op">,</span> <span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb2-30"><a href="#cb2-30"></a>}</span>
-<span id="cb2-31"><a href="#cb2-31"></a></span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="co">/**主人公の移動できる範囲*/</span></span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="pp">#targetField</span> {</span>
-<span id="cb2-34"><a href="#cb2-34"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">rgb(</span><span class="dv">113</span><span class="op">,</span> <span class="dv">113</span><span class="op">,</span> <span class="dv">113</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb2-35"><a href="#cb2-35"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-37"><a href="#cb2-37"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-38"><a href="#cb2-38"></a>  <span class="kw">bottom</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-39"><a href="#cb2-39"></a>  <span class="kw">z-index</span><span class="ch">:</span> <span class="dv">-1</span><span class="op">;</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb1" data-caption="main.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">alert</span>(<span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
       <ul>
-      <li>この2つを実行すると、以下のようになります。</li>
+      <li>ただし、これだけでは、HTMLにこのJavaScriptファイルを読み込んでくれない。
+      なので、HTMLの<strong>body</strong>内にこのように書いて読み込ませる必要がある。</li>
       </ul>
-      <iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/oNOKKry?default-tab=html%2Cresult&amp;editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-      See the Pen <a href="https://codepen.io/YasaiRa-men/pen/oNOKKry">
-      Untitled</a> by バナナフライ
-      (<a href="https://codepen.io/YasaiRa-men"><span class="citation"
-      data-cites="YasaiRa-men">@YasaiRa-men</span></a>) on
-      <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+      <div class="sourceCode" id="cb2" data-caption="index.html"><pre
+      class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;main.js&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div>
       <ul>
-      <li>スタートボタンがありますが、まだ何も起きません。</li>
+      <li>この<strong>script</strong>タグで、JavaScriptを読み込んでくれるようになり、<strong>src</strong>属性で、どのJavaScriptファイルを読み込むかを記述する。</li>
       </ul>
-      <h2 data-number="1.2" id="主人公の作成"><span
-      class="header-section-number">1.2</span> 主人公の作成</h2>
+      <h1 data-number="2" id="変数"><span
+      class="header-section-number">2</span> 変数</h1>
+      <h2 data-number="2.1" id="役割"><span
+      class="header-section-number">2.1</span> 役割</h2>
       <ul>
-      <li>次に、ボタンが押されたら主人公が出現するようにしよう。</li>
-      <li>主人公は、のちにJavaScriptで操作できるように、“target”というid属性をつけます。</li>
+      <li>変数は、値を代入しておき、それを変更したときに動的に変わるようになります。</li>
+      <li>プログラム内でデータを一時的に保持し、操作するために使用されます。これにより、プログラムはより動的で柔軟なデータ処理を実現できます。</li>
+      <li>また、変数を使用することで、コードの再利用性が向上し、プログラムの可読性とメンテナンスが容易になります。</li>
       </ul>
-      <div class="sourceCode" id="cb3"
-      data-caption="example02.html"><pre
-      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;ja&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Game<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>    <span class="dt">&lt;</span><span class="kw">main</span><span class="dt">&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;mainWindow&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;targetField&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>            <span class="co">&lt;!-- ここに主人公にするdivを配置 --&gt;</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;target&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a></span>
-<span id="cb3-16"><a href="#cb3-16"></a>            <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;gameTitle&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a>                <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>避けゲー<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a>                <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;startButton&quot;</span><span class="dt">&gt;</span>スタート<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a>            <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a></span>
-<span id="cb3-21"><a href="#cb3-21"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a>    <span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+      <h2 data-number="2.2" id="コード例"><span
+      class="header-section-number">2.2</span> コード例</h2>
+      <div class="sourceCode" id="cb3" data-caption="example01.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">let</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(x)<span class="op">;</span></span></code></pre></div>
+      <p>このコードでは、<code>x</code>という変数に<code>10</code>を代入し、その後<code>x</code>に<code>5</code>を加えています。最終的に<code>x</code>の値は<code>15</code>となり、これが出力されます。</p>
+      <h1 data-number="3" id="条件分岐"><span
+      class="header-section-number">3</span> 条件分岐</h1>
+      <h2 data-number="3.1" id="役割-1"><span
+      class="header-section-number">3.1</span> 役割</h2>
       <ul>
-      <li>また、主人公には分かりやすいように色を茶色の丸にしておきます。</li>
+      <li>条件分岐は、プログラム内で特定の条件を満たすかどうかに基づいて、異なるコードの実行パスを選択するために使用されます。</li>
+      <li>これにより、プログラムはより柔軟に動作し、様々なシナリオに対応できるようになります。</li>
+      <li>例として、変数の値に基づいて異なるメッセージを表示することが挙げられます。</li>
       </ul>
-      <div class="sourceCode" id="cb4" data-caption="example01.css"><pre
-      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a>html<span class="op">,</span>body{</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5"></a>       </span>
-<span id="cb4-6"><a href="#cb4-6"></a>body {</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>}</span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a>main {</span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translateX(</span><span class="dv">50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>}</span>
-<span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">/**ステージの枠*/</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="pp">#mainWindow</span> {</span>
-<span id="cb4-18"><a href="#cb4-18"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">gray</span><span class="op">;</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>  <span class="kw">aspect-ratio</span><span class="ch">:</span> <span class="dv">3</span> / <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translateX(</span><span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a>}</span>
-<span id="cb4-23"><a href="#cb4-23"></a></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="co">/**ゲームタイトルの枠*/</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="pp">#gameTitle</span> {</span>
-<span id="cb4-26"><a href="#cb4-26"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb4-27"><a href="#cb4-27"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">translate(</span><span class="dv">-50</span><span class="dt">%</span><span class="op">,</span> <span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a>}</span>
-<span id="cb4-31"><a href="#cb4-31"></a></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="co">/**主人公の移動できる範囲*/</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="pp">#targetField</span> {</span>
-<span id="cb4-34"><a href="#cb4-34"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">rgb(</span><span class="dv">113</span><span class="op">,</span> <span class="dv">113</span><span class="op">,</span> <span class="dv">113</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb4-36"><a href="#cb4-36"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-37"><a href="#cb4-37"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-38"><a href="#cb4-38"></a>  <span class="kw">bottom</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-39"><a href="#cb4-39"></a>  <span class="kw">z-index</span><span class="ch">:</span> <span class="dv">-1</span><span class="op">;</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a>}</span>
-<span id="cb4-41"><a href="#cb4-41"></a></span>
-<span id="cb4-42"><a href="#cb4-42"></a><span class="co">/**主人公*/</span></span>
-<span id="cb4-43"><a href="#cb4-43"></a><span class="pp">#target</span> {</span>
-<span id="cb4-44"><a href="#cb4-44"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">brown</span><span class="op">;</span></span>
-<span id="cb4-45"><a href="#cb4-45"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-46"><a href="#cb4-46"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-47"><a href="#cb4-47"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-49"><a href="#cb4-49"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb4-50"><a href="#cb4-50"></a>}</span></code></pre></div>
+      <h2 data-number="3.2" id="コード例-1"><span
+      class="header-section-number">3.2</span> コード例</h2>
+      <div class="sourceCode" id="cb4" data-caption="example02.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">let</span> age <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">if</span> (age <span class="op">&gt;=</span> <span class="dv">18</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;成人です&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;未成年です&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>}</span></code></pre></div>
+      <p>このコードでは、<code>age</code>が<code>18</code>以上の場合は”成人です”を、そうでない場合は”未成年です”を出力します。</p>
+      <h1 data-number="4" id="繰り返し処理"><span
+      class="header-section-number">4</span> 繰り返し処理</h1>
+      <h2 data-number="4.1" id="役割-2"><span
+      class="header-section-number">4.1</span> 役割</h2>
       <ul>
-      <li>これによって、このようになりました。</li>
+      <li>繰り返し処理は、同じコードブロックを複数回実行するために使用されます。</li>
+      <li>これにより、コードの冗長性を減らし、大量のデータ処理や反復的なタスクを効率的に処理することができます。</li>
+      <li>例として、変数の値を増加させながら一定の条件を満たすまでループを続けることが挙げられます。</li>
       </ul>
-      <iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/pomzzoE?default-tab=html%2Cresult&amp;editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-      See the Pen <a href="https://codepen.io/YasaiRa-men/pen/pomzzoE">
-      Untitled</a> by バナナフライ
-      (<a href="https://codepen.io/YasaiRa-men"><span class="citation"
-      data-cites="YasaiRa-men">@YasaiRa-men</span></a>) on
-      <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+      <h2 data-number="4.2" id="コード例-2"><span
+      class="header-section-number">4.2</span> コード例</h2>
+      <div class="sourceCode" id="cb5" data-caption="example03.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>}</span></code></pre></div>
+      <p>このコードでは、<code>0</code>から<code>4</code>までの数字が順番に出力されます。<code>for</code>ループによってそれぞれの値が<code>i</code>に代入され、出力されます。</p>
+      <h1 data-number="5" id="例外処理"><span
+      class="header-section-number">5</span> 例外処理</h1>
+      <h2 data-number="5.1" id="役割-3"><span
+      class="header-section-number">5.1</span> 役割</h2>
       <ul>
-      <li>分かりやすく主人公が出てきましたが、左上にいます。</li>
-      <li>これらも自分で設定していかなければなりません。</li>
+      <li>例外処理は、プログラム実行中に発生する予期せぬエラーや例外に対処するために使用されます。</li>
+      <li>これにより、プログラムの安定性と信頼性が向上し、エラーが発生しても適切に対応し、プログラムのクラッシュを防ぐことができます。</li>
+      <li>例として、ファイル読み込み時にファイルが存在しない場合にエラーメッセージを表示することが挙げられます。</li>
       </ul>
-      <iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Example_01" src="https://codepen.io/YasaiRa-men/embed/XWQvLRQ?default-tab=html%2Cresult&amp;editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-      See the Pen <a href="https://codepen.io/YasaiRa-men/pen/XWQvLRQ">
-      Example_01</a> by バナナフライ
-      (<a href="https://codepen.io/YasaiRa-men"><span class="citation"
-      data-cites="YasaiRa-men">@YasaiRa-men</span></a>) on
-      <a href="https://codepen.io">CodePen</a>.
-      </iframe>
-      <h1 data-number="2" id="主人公を動かしてみよう"><span
-      class="header-section-number">2</span> 主人公を動かしてみよう</h1>
-      <iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Example_02" src="https://codepen.io/YasaiRa-men/embed/QWPeXMx?default-tab=html%2Cresult&amp;editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-      See the Pen <a href="https://codepen.io/YasaiRa-men/pen/QWPeXMx">
-      Example_02</a> by バナナフライ
-      (<a href="https://codepen.io/YasaiRa-men"><span class="citation"
-      data-cites="YasaiRa-men">@YasaiRa-men</span></a>) on
-      <a href="https://codepen.io">CodePen</a>.
-      </iframe>
-      <iframe height="300" style="width: 100%; height: 600px;" scrolling="no" title="Game" src="https://codepen.io/YasaiRa-men/embed/YzMmoKX?default-tab=html%2Cresult&amp;editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-      See the Pen <a href="https://codepen.io/YasaiRa-men/pen/YzMmoKX">
-      Game</a> by バナナフライ
-      (<a href="https://codepen.io/YasaiRa-men"><span class="citation"
-      data-cites="YasaiRa-men">@YasaiRa-men</span></a>) on
-      <a href="https://codepen.io">CodePen</a>.
-      </iframe>
+      <h2 data-number="5.2" id="コード例-3"><span
+      class="header-section-number">5.2</span> コード例</h2>
+      <div class="sourceCode" id="cb6" data-caption="example04.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">try</span> {</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a>} <span class="cf">catch</span> (error) {</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;0で割ることはできません&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>}</span></code></pre></div>
+      <p>このコードでは、<code>10 / 0</code>の計算を試みていますが、0で割ることはできないためエラーが発生します。<code>catch</code>ブロックによってこのエラーが捕捉され、“0で割ることはできません”が出力されます。</p>
+      <h1 data-number="6" id="関数"><span
+      class="header-section-number">6</span> 関数</h1>
+      <h2 data-number="6.1" id="役割-4"><span
+      class="header-section-number">6.1</span> 役割</h2>
+      <ul>
+      <li>関数は、特定のタスクを実行するためのコードの集まりです。</li>
+      <li>これにより、コードの再利用性が向上し、プログラム全体の構造が整理され、メンテナンスが容易になります。</li>
+      <li>例として、ユーザー入力を受け取り、それに基づいて異なる処理を行う関数が挙げられます。</li>
+      </ul>
+      <h2 data-number="6.2" id="コード例-4"><span
+      class="header-section-number">6.2</span> コード例</h2>
+      <div class="sourceCode" id="cb7" data-caption="example05.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">function</span> <span class="fu">greet</span>(name) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;こんにちは、&quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;さん！&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">greet</span>(<span class="st">&quot;太郎&quot;</span>)<span class="op">;</span></span></code></pre></div>
+      <p>このコードでは、<code>greet</code>関数が定義されており、<code>name</code>という引数を取ります。この関数は、与えられた名前を使用して挨拶のメッセージを出力します。<code>greet("太郎")</code>の呼び出しにより、“こんにちは、太郎さん！”が出力されます。</p>
+      <h1 data-number="7" id="イベントリスナー"><span
+      class="header-section-number">7</span> イベントリスナー</h1>
+      <h2 data-number="7.1" id="役割-5"><span
+      class="header-section-number">7.1</span> 役割</h2>
+      <ul>
+      <li>イベントリスナーは、ユーザーのアクション（クリック、キーボード入力など）に応じて特定のコードを実行するために使用されます。</li>
+      <li>これにより、インタラクティブなウェブページやアプリケーションを作成することが可能になります。</li>
+      <li>例として、ボタンがクリックされたときに情報を表示することが挙げられます。</li>
+      </ul>
+      <h2 data-number="7.2" id="コード例-5"><span
+      class="header-section-number">7.2</span> コード例</h2>
+      <div class="sourceCode" id="cb8" data-caption="example06.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;myButton&quot;</span>)<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span>() {</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;ボタンがクリックされました！&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>})<span class="op">;</span></span></code></pre></div>
+      <p>このコードでは、IDが<code>myButton</code>のボタンにクリックイベントリスナーを追加しています。ボタンがクリックされると、コンソールに<code>"ボタンがクリックされました！"</code>と表示されます。</p>
+      <h1 data-number="8" id="無名関数"><span
+      class="header-section-number">8</span> 無名関数</h1>
+      <h2 data-number="8.1" id="役割-6"><span
+      class="header-section-number">8.1</span> 役割</h2>
+      <ul>
+      <li>無名関数（匿名関数）は、名前を持たない関数で、一時的な処理やイベントハンドラーとして使用されることが多いです。</li>
+      <li>これにより、コードの簡潔化が図られ、一度限りの使用や即時実行が可能になります。</li>
+      <li>例として、イベントリスナー内で直接処理を記述することが挙げられます。</li>
+      </ul>
+      <h2 data-number="8.2" id="コード例-6"><span
+      class="header-section-number">8.2</span> コード例</h2>
+      <div class="sourceCode" id="cb9" data-caption="example07.js"><pre
+      class="sourceCode numberSource javascript numberLines"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;infoButton&quot;</span>)<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span>() {</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">alert</span>(<span class="st">&quot;情報を表示します！&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a>})<span class="op">;</span></span></code></pre></div>
+      <p>このコードでは、IDが<code>infoButton</code>のボタンにクリックイベントリスナーを追加し、無名関数を使用しています。ボタンがクリックされると、アラートで”情報を表示します！“というメッセージが表示されます。この例では、イベントリスナーに直接無名関数を記述することで、コードの簡潔さを保ちつつ、必要な機能を実装しています。</p>
       <!-- ---------------------------------------- -->
     </main>
 
     <footer class="markdown-body">
-      <p><a href="https://YasaiRa-men.github.io/Javascript-Programming-Text/">講義資料のIndexに移動</a></p>
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2024/">講義資料のIndexに移動</a></p>
     </footer>
 
     <script>
