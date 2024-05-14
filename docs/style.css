@@ -506,6 +506,30 @@ div.note > pre {
   color: #887100;
 }
 
+/* ------- ノート Type-intro------- */
+
+.markdown-body div.type-intro {
+  border: 2px solid #0032bd; /* 3 */
+  background: #7e99e4; /* 1 */
+}
+
+.type-intro p:first-child::before {
+  content: "\f5ad";
+  color: #152f79; /* 4 */
+}
+
+.type-intro strong {
+  color: #152f79; /* 4 */
+}
+
+.type-intro code {
+  background: #f4d002; /* 2 */
+}
+
+.type-intro ul li::before {
+  color: #887100;
+}
+
 /* ------- プログラムコードの装飾 ------- */
 
 /* 演算子 */
