@@ -13,7 +13,7 @@ html {
   --code-out-background: #012456;
 
   --main-foreground: #24292e;
-  --main-theme-color: #0366d6;
+  --main-theme-color: #496586;
   --main-theme-lt-color: #2c3f50;
 
   --main-background: #ebebeb;
@@ -130,6 +130,7 @@ footer.markdown-body p {
   padding: 0 0 0 1.6em;
   border-bottom: 2px solid;
   color: var(--main-theme-color);
+  margin-top: 50px;
 }
 
 .markdown-body h1::before {
@@ -142,6 +143,7 @@ footer.markdown-body p {
 
 .markdown-body h2 {
   border-bottom: 2px solid;
+  margin-top: 50px;
 }
 
 .markdown-body h3 {
@@ -340,10 +342,10 @@ div.note > pre {
 .markdown-body span.masked {
   font-weight: bold;
   color: transparent;
-  background-color: #7c7eff;
+  background-color: #4f619c;
   padding: 0.05em 0.5em 0.05em 0.3em;
   border-radius: 8px;
-  border: solid 2px #7c7eff;
+  border: solid 2px #4f619c;
   cursor: pointer;
 }
 
@@ -530,6 +532,60 @@ div.note > pre {
   color: #887100;
 }
 
+/* ------- ノート Type-quiz------- */
+
+.markdown-body div.type-quiz {
+  border: 2px solid #2e2e2e; /* 3 */
+  background: #cccccc; /* 1 */
+}
+
+.type-quiz p:first-child::before {
+  content: "\f5ad";
+  color: #000000; /* 4 */
+}
+
+.type-quiz strong {
+  color: #000000; /* 4 */
+}
+
+.type-quiz code {
+  background: #8e8e8e; /* 2 */
+}
+
+.type-quiz ul li::before {
+  color: #e90000;
+}
+
+.note.type-quiz .options {
+  margin-top: 20px;
+  display: flex;
+}
+
+.note.type-quiz .option {
+  flex: 1;
+  padding: 10px;
+  background-color: #dedede;
+  color: #000000;
+  border: 2px solid  #6a737d;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.note.type-quiz .option:hover {
+  font-size: 1.5em;
+  padding: 4px 10px;
+  transition: all 0.3s;
+}
+
+.note.type-quiz .answercontent {
+  border: 2px solid #6d6d6d; /* 3 */
+  background: #9fb0d3; /* 1 */
+  height: 0px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
 /* ------- プログラムコードの装飾 ------- */
 
 /* 演算子 */
@@ -683,7 +739,7 @@ code span.in {
   cursor: pointer;
   width: 50px;
   height: 50px;
-  background: rgba(48, 104, 215, 0.8);
+  background: rgba(117, 137, 177, 0.8);
   border-radius: 5px;
 }
 
@@ -694,7 +750,7 @@ code span.in {
   left: 14px;
   height: 2px;
   border-radius: 5px;
-  background: white;
+  background: rgb(255, 255, 255);
   width: 45%;
 }
 
