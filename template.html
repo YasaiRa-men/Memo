@@ -87,6 +87,39 @@
           };
         });
 
+        // クリック処理
+        let options = document.getElementsByClassName("quizes");
+        Array.from(options).forEach((option) => {
+          option.addEventListener('click', function() {
+            let correctOption = this.querySelector('.correct');
+            let incorrectOptions = this.querySelectorAll('.incorrect');
+            let answercontentOption = this.querySelector('.answercontent');
+
+            // rgb(120, 239, 111) == #78ef6f
+            if (correctOption.style.backgroundColor != 'rgb(120, 239, 111)') {
+              correctOption.style.backgroundColor = '#78ef6f';
+              correctOption.style.color = '#000000';
+            
+              incorrectOptions.forEach((incorrect) => {
+                incorrect.style.backgroundColor = '#ef6f6f';
+                incorrect.style.color = '#000000';
+              });
+
+              answercontentOption.style.height = "100%";
+            } else {
+              correctOption.style.backgroundColor = '#dedede';
+              correctOption.style.color = '#000000';
+            
+              incorrectOptions.forEach((incorrect) => {
+                incorrect.style.backgroundColor = '#dedede';
+                incorrect.style.color = '#000000';
+              });
+
+              answercontentOption.style.height = "0px";
+            }
+          });
+        });
+
         // data-startfrom 属性の行番号カウンタのリセット
         document.querySelectorAll("div.sourceCode").forEach(function (div) {
           var startFrom = div.getAttribute("data-startfrom");
