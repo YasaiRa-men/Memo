@@ -408,13 +408,38 @@ let elementsByTag = document.getElementsByTagName("div");
 
 ### HTML要素の変更
 
-- Documentオブジェクトを使用して、取得したHTML要素の内容やスタイルを変更することができます。以下は、要素の内容を変更する例です。
+- ひとまず、HTMLをこのように書いてみよう。
 
+```html{caption="index.html"}
+<p id="myElement"></p>
+<script src="main.js"></script>
+```
+
+- Documentオブジェクトを使用して、<em>textContent</em>で取得したHTML要素の内容を変更することができます。以下は、要素の内容を変更する例です。
+
+```javascript{.numberLines caption="main.js"}
+let element = document.getElementById("myElement");
+element.textContent = "新しいテキスト";
+```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/NWVNdmK?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/NWVNdmK">
+  Untitled</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+また、<em>style</em>でcssのスタイルを変更することができます。以下は、要素の内容を変更する例です。
 ```javascript{.numberLines caption="main.js"}
 let element = document.getElementById("myElement");
 element.textContent = "新しいテキスト";
 element.style.color = "red";
 ```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/MWdyJRj?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/MWdyJRj">
+  Untitled</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ### 新しい要素の作成
 
@@ -429,3 +454,13 @@ document.body.appendChild(newElement);
 ### Documentオブジェクトの活用
 
 - Documentオブジェクトを活用することで、動的なWebページの作成や操作が可能となります。JavaScriptを使用して、ユーザーとのインタラクションやページの動的な変更を実現する際にDocumentオブジェクトは重要な役割を果たします。
+
+<div class="note type-quiz">
+Q. 以下のHTMLのp要素に「こんにちは」という文字を入れ、の背景を青に、横幅を100%にしよう。
+```html{caption="index.html"}
+<p id="myElement"></p>
+<script src="main.js"></script>
+```
+</div>
+
+</div>
