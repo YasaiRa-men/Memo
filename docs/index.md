@@ -298,15 +298,27 @@ console.log(A);
 <div class="options">
   <div class="option incorrect">0</div>
   <div class="option incorrect">A</div>
-  <div class="option correct">エラー</div>
+  <div class="option correct">それ以外</div>
 </div>
 <div class="answercontent">
 実は、変数は大文字と小文字も区別します。そのためAという変数が宣言されておらず、「Aが定義されていない」というエラーが表示されます。
 </div>
 </div>
-
 </div>
 
+<div class="note type-caution">
+変数の定義における`var`の非推奨理由
+<br>WebでJavaScriptについて検索すると、変数の宣言に`var`を使用しているものをよく見かけます。
+<br>これは、古いバージョンのJavaScriptで使用されていた変数宣言キーワードですが、現代のJavaScriptでは`let`や`const`が推奨されてて、`var`は非推奨となっています。
+<br>主な理由の1つは、変数の再宣言が可能であるため、これが意図しない変数の上書きや混乱を招く可能性があります。
+```javascript{.numberLines caption="main.js"}
+var z = 30;
+
+// 再宣言が可能
+var z = 40;
+console.log(z); // --> 40
+```
+</div>
 ## 関数
 
 ### 関数の基本
@@ -461,6 +473,27 @@ Q. 以下のHTMLのp要素に「こんにちは」という文字を入れ、の
 <p id="myElement"></p>
 <script src="main.js"></script>
 ```
+<div class="quizes">
+<div class="options">
+  <div class="option correct">答えを見る</div>
+</div>
+<div class="answercontent">
+答えの一例です。
+<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/YasaiRa-men/embed/yLWVXjQ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/YasaiRa-men/pen/yLWVXjQ">
+  Untitled</a> by バナナフライ (<a href="https://codepen.io/YasaiRa-men">@YasaiRa-men</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+</div>
+</div>
 </div>
 
-</div>
+## プロパティ・メソッド
+
+### プロパティとは
+
+- プロパティは、オブジェクトに関連付けられた値を表します。JavaScriptでは、オブジェクトのプロパティには値や関数が含まれることがあります。
+
+### メソッドとは
+
+- メソッドは、オブジェクトに関連付けられた関数を表します。オブジェクトのメソッドは、そのオブジェクトに対して特定の操作を行うために使用されます。
